@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Full Stack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#1e40af',
+                        accent: '#3b82f6'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        .fade-in { 
+            opacity: 0; 
+            transform: translateY(30px); 
+            transition: all 0.6s ease; 
+        }
+        .fade-in.visible { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-900 bg-white">
+    <!-- Navigation -->
+    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-200 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold text-primary">YourName</a>
+            
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#home" class="nav-link font-medium text-gray-700 hover:text-primary transition-colors duration-300 relative">Home</a></li>
+                <li><a href="#about" class="nav-link font-medium text-gray-700 hover:text-primary transition-colors duration-300 relative">About</a></li>
+                <li><a href="#projects" class="nav-link font-medium text-gray-700 hover:text-primary transition-colors duration-300 relative">Projects</a></li>
+                <li><a href="#experience" class="nav-link font-medium text-gray-700 hover:text-primary transition-colors duration-300 relative">Experience</a></li>
+                <li><a href="#contact" class="nav-link font-medium text-gray-700 hover:text-primary transition-colors duration-300 relative">Contact</a></li>
+            </ul>
+            
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden flex flex-col space-y-1" id="mobile-menu-btn">
+                <span class="w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+                <span class="w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+                <span class="w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+            </button>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white border-t border-gray-200" id="mobile-menu">
+            <div class="px-6 py-4 space-y-3">
+                <a href="#home" class="block py-2 text-gray-700 hover:text-primary transition-colors">Home</a>
+                <a href="#about" class="block py-2 text-gray-700 hover:text-primary transition-colors">About</a>
+                <a href="#projects" class="block py-2 text-gray-700 hover:text-primary transition-colors">Projects</a>
+                <a href="#experience" class="block py-2 text-gray-700 hover:text-primary transition-colors">Experience</a>
+                <a href="#contact" class="block py-2 text-gray-700 hover:text-primary transition-colors">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-20 pb-16 bg-gradient-to-br from-white to-gray-50">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-6 gradient-text">Full Stack Developer</h1>
+            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                Passionate about creating innovative solutions and building exceptional user experiences. 
+                Specializing in modern web technologies and scalable applications.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#projects" class="bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-secondary transform hover:-translate-y-1 transition-all duration-300">
+                    View My Work
+                </a>
+                <a href="#contact" class="border-2 border-primary text-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white transition-all duration-300">
+                    Get In Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">About Me</h2>
+            
+            <div class="grid md:grid-cols-3 gap-12 items-center">
+                <!-- Profile Image -->
+                <div class="text-center">
+                    <div class="w-64 h-64 bg-primary rounded-full flex items-center justify-center text-white text-6xl mx-auto mb-6">
+                        👨‍💻
+                    </div>
+                </div>
+                
+                <!-- About Text -->
+                <div class="md:col-span-2">
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        I'm a passionate full-stack developer with [X] years of experience building web applications 
+                        and digital solutions. I love turning complex problems into simple, beautiful designs and 
+                        writing clean, efficient code.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        When I'm not coding, you can find me working on side projects, contributing to open source, 
+                        or exploring new technologies. I believe in continuous learning and staying up-to-date with 
+                        the latest industry trends.
+                    </p>
+                    
+                    <!-- Skills Grid -->
+                    <div class="grid sm:grid-cols-3 gap-6">
+                        <div>
+                            <h3 class="text-primary font-semibold mb-3">Frontend</h3>
+                            <ul class="text-gray-600 space-y-2">
+                                <li>React / Next.js</li>
+                                <li>TypeScript</li>
+                                <li>HTML5 / CSS3</li>
+                                <li>Tailwind CSS</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-primary font-semibold mb-3">Backend</h3>
+                            <ul class="text-gray-600 space-y-2">
+                                <li>Node.js / Express</li>
+                                <li>Python / Django</li>
+                                <li>PostgreSQL / MongoDB</li>
+                                <li>REST / GraphQL APIs</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-primary font-semibold mb-3">Tools & Platforms</h3>
+                            <ul class="text-gray-600 space-y-2">
+                                <li>Git / GitHub</li>
+                                <li>Docker</li>
+                                <li>AWS / Vercel</li>
+                                <li>CI/CD Pipelines</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-6">Projects</h2>
+            <p class="text-xl text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+                Here are some of my recent projects and side projects that showcase my skills and passion for development.
+            </p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 fade-in">
+                    <div class="h-48 bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white text-4xl">
+                        🚀
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Project Name 1</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            A full-stack web application that solves [problem]. Built with modern technologies 
+                            and focuses on user experience and performance.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium">React</span>
+                            <span class="bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Node.js</span>
+                            <span class="bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium">PostgreSQL</span>
+                            <span class="bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Docker</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-primary font-medium hover:underline flex items-center gap-1">
+                                🔗 Live Demo
+                            </a>
+                            <a href="#" class="text-primary font-medium hover:underline flex items-center gap-1">
+                                📱 GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 fade-in">
+                    <div class="h-48 bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white text-4xl">
+                        💡
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Side Project 1</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            An innovative solution for [specific problem]. This side project demonstrates my 
+                            ability to identify problems and create solutions.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Python</span>
+                            <span class="bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium">FastAPI</span>
+                            <span class="bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium">React</span>
+                            <span class="bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium">AWS</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-primary font-medium hover:underline flex items-center gap-1">
+                                🔗 Live Demo
+                            </a>
+                            <a href="#" class="text-primary font-medium hover:underline flex items-center gap-1">
+                                📱 GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 fade-in">
+                    <div class="h-48 bg-gradient-to-br from-green-500 to-blue-500 flex items-center justify-center text-white text-4xl">
+                        ⚡
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Open Source Contribution</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Major contribution to [open source project]. Added features and improved performance, 
+                            helping thousands of developers.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium">TypeScript</span>
+                            <span class="bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Jest</span>
+                            <span class="bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Webpack</span>
+                            <span class="bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium">CI/CD</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-primary font-medium hover:underline flex items-center gap-1">
+                                📱 GitHub
+                            </a>
+                            <a href="#" class="text-primary font-medium hover:underline flex items-center gap-1">
+                                📄 Documentation
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Experience</h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <!-- Experience Item 1 -->
+                <div class="bg-white rounded-xl p-8 mb-6 border-l-4 border-primary shadow-lg fade-in">
+                    <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900">Senior Full Stack Developer</h3>
+                            <p class="text-primary font-medium">Company Name</p>
+                        </div>
+                        <span class="text-gray-500 text-sm lg:text-base mt-2 lg:mt-0">2022 - Present</span>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        Lead development of scalable web applications using React, Node.js, and cloud technologies. 
+                        Mentored junior developers and implemented best practices for code quality and deployment.
+                    </p>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="bg-white rounded-xl p-8 mb-6 border-l-4 border-primary shadow-lg fade-in">
+                    <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900">Frontend Developer</h3>
+                            <p class="text-primary font-medium">Previous Company</p>
+                        </div>
+                        <span class="text-gray-500 text-sm lg:text-base mt-2 lg:mt-0">2020 - 2022</span>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        Developed responsive web applications and improved user experience across multiple products. 
+                        Collaborated with design and backend teams to deliver high-quality features.
+                    </p>
+                </div>
+
+                <!-- Experience Item 3 -->
+                <div class="bg-white rounded-xl p-8 mb-6 border-l-4 border-primary shadow-lg fade-in">
+                    <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900">Junior Developer</h3>
+                            <p class="text-primary font-medium">First Company</p>
+                        </div>
+                        <span class="text-gray-500 text-sm lg:text-base mt-2 lg:mt-0">2019 - 2020</span>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        Started my professional journey building web applications and learning industry best practices. 
+                        Gained experience in full-stack development and agile methodologies.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-6">Let's Connect</h2>
+            <p class="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
+                I'm always interested in new opportunities and collaborations. Feel free to reach out!
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <a href="mailto:your.email@example.com" class="flex items-center gap-3 text-gray-700 hover:text-primary transition-colors font-medium">
+                    📧 Email
+                </a>
+                <a href="https://linkedin.com/in/yourprofile" class="flex items-center gap-3 text-gray-700 hover:text-primary transition-colors font-medium">
+                    💼 LinkedIn
+                </a>
+                <a href="https://github.com/yourusername" class="flex items-center gap-3 text-gray-700 hover:text-primary transition-colors font-medium">
+                    📱 GitHub
+                </a>
+                <a href="https://twitter.com/yourusername" class="flex items-center gap-3 text-gray-700 hover:text-primary transition-colors font-medium">
+                    🐦 Twitter
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Your Name. Built with ❤️ using Tailwind CSS.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking on links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('bg-white/98');
+                header.classList.remove('bg-white/95');
+            } else {
+                header.classList.add('bg-white/95');
+                header.classList.remove('bg-white/98');
+            }
+        });
+
+        // Fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Active navigation link highlighting
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        // Add underline effect with CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            .nav-link::after {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 2px;
+                bottom: -5px;
+                left: 0;
+                background: #2563eb;
+                transition: width 0.3s ease;
+            }
+            .nav-link:hover::after,
+            .nav-link.active::after {
+                width: 100%;
+            }
+        `;
+        document.head.appendChild(style);
+
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
